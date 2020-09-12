@@ -9,28 +9,32 @@ public class InterestCalculatorApp {
 		System.out.println("Welcome to the Interest Calculator");
 		System.out.println();
 
-		double loanAmount = 0;
-		double interestAmount = 0;
+		// set scanner
 		Scanner sc = new Scanner(System.in);
-
 		String choice = "y";
 		while (choice.equalsIgnoreCase("y")) {
+
+			// get input from user
 			System.out.print("Enter Loan Amount:   ");
-			loanAmount = sc.nextDouble();
+			BigDecimal loanAmount = sc.nextBigDecimal();
 			System.out.print("Enter Interest Rate:   ");
-			interestAmount = sc.nextDouble();
+			BigDecimal interestRate = sc.nextBigDecimal();
 			System.out.println();
 
-			double interest = loanAmount * interestAmount;
+			// perform calculation
+			BigDecimal interest = loanAmount.multiply(interestRate);
+			interest = interest.setScale(2, RoundingMode.HALF_UP);
 
+			// display the results
 			NumberFormat currency = NumberFormat.getCurrencyInstance();
 			NumberFormat percent = NumberFormat.getPercentInstance();
 			percent.setMaximumFractionDigits(3);
 
 			String message = "Loan Amount:" + currency.format(loanAmount) + "\n" + "Interest Rate:"
-					+ percent.format(interestAmount) + "\n" + "Interest:" + currency.format(interest) + "\n";
+					+ percent.format(interestRate) + "\n" + "Interest:" + currency.format(interest) + "\n";
 			System.out.println(message);
 
+			// prompt to continue
 			System.out.print("Continue? (y/n):");
 			choice = sc.next();
 			System.out.println();

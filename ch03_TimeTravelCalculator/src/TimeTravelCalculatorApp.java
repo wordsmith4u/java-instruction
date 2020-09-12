@@ -13,12 +13,12 @@ public class TimeTravelCalculatorApp {
 
 		String choice = "y";
 		while (choice.equalsIgnoreCase("y")) {
-			System.out.print("Enter Miles:");
+			System.out.print("Enter Miles:                  ");
 			miles = sc.nextDouble();
-			System.out.print("Enter Miles Per Hour:");
+			System.out.print("Enter Miles Per Hour:         ");
 			mph = sc.nextDouble();
 			System.out.println();
-			System.out.println("Estimated Travel Time");
+			System.out.println("Estimated Travel Time       ");
 
 			double hours = miles / mph;
 			hours = (int) Math.round(hours * 100) / 100;
