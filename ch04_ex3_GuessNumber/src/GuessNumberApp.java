@@ -28,13 +28,15 @@ public class GuessNumberApp {
 
 		Scanner sc = new Scanner(System.in);
 		int count = 1;
-		while (true) {
+		int guess = 0;
+
+		while (guess != number) {
 			System.out.print("Your guess: ");
-			int guess = sc.nextInt();
+			guess = sc.nextInt();
 
 			if (guess < 1 || guess > LIMIT) {
 				System.out.println("Invalid guess. Try again.");
-				continue;
+				count--;
 			}
 
 			if (guess < number) {

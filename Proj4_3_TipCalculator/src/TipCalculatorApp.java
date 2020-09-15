@@ -22,13 +22,13 @@ public class TipCalculatorApp {
 			BigDecimal tipAmount2 = mealCost.multiply(tip2).setScale(2, RoundingMode.HALF_UP);
 			BigDecimal tipAmount3 = mealCost.multiply(tip3).setScale(2, RoundingMode.HALF_UP);
 
-			System.out.println("15%" + "\r" + "Tip Amount:" + "$" + (tipAmount1) + "\r" + "Total Amount:" + "$"
+			System.out.println("15%\r" + "Tip Amount:    " + "$" + (tipAmount1) + "\r" + "Total Amount:  " + "$"
 					+ mealCost.add(tipAmount1));
 			System.out.println();
-			System.out.println("20%" + "\r" + "Tip Amount:" + "$" + (tipAmount2) + "\r" + "Total Amount:" + "$"
+			System.out.println("20%\r" + "Tip Amount:    " + "$" + (tipAmount2) + "\r" + "Total Amount:  " + "$"
 					+ mealCost.add(tipAmount2));
 			System.out.println();
-			System.out.println("25%" + "\r" + "Tip Amount:" + "$" + (tipAmount3) + "\r" + "Total Amount:" + "$"
+			System.out.println("25%\r" + "Tip Amount:    " + "$" + (tipAmount3) + "\r" + "Total Amount:  " + "$"
 					+ mealCost.add(tipAmount3));
 			System.out.println();
 
