@@ -6,15 +6,10 @@ public class ContactList {
 	private String lastName;
 	private String email;
 	private String phone;
-	private String contact;
 
 	// constructors
 	public ContactList() {
-		firstName = "";
-		lastName = "";
-		email = "";
-		phone = "";
-		contact = "";
+		this("", "", "", "");
 	}
 
 	public ContactList(String firstName, String lastName, String email, String phone) {
@@ -25,7 +20,7 @@ public class ContactList {
 	}
 
 	// setter and getters
-	public void setFirstName(String name) {
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
@@ -33,7 +28,7 @@ public class ContactList {
 		return firstName;
 	}
 
-	public void setLastName(String name) {
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
@@ -57,7 +52,14 @@ public class ContactList {
 		return phone;
 	}
 
-	public String displayContact(String name, String email, String phone) {
-		return contact;
+	// helper method
+	public String displayContact() {
+		String retVal = "------------------------------------------------------\n"
+				+ "--------------Current Contact-------------------------\n"
+				+ "------------------------------------------------------\n" + "Name:                  "
+				+ this.firstName + " " + this.lastName + "\n" + "Email Address:         " + this.email + "\n"
+				+ "Phone Number:          " + this.phone + "\n"
+				+ "------------------------------------------------------";
+		return retVal;
 	}
 }
