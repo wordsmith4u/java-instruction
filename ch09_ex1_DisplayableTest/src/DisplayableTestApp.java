@@ -13,6 +13,6 @@ public class DisplayableTestApp {
 	}
 
 	private static void display(Displayable d) {
-		System.out.println(getDisplayText());
+		System.out.println(d.getDisplayText());
 	}
 }
