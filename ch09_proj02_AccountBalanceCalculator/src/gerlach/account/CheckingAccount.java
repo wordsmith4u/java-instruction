@@ -1,4 +1,4 @@
-
+package gerlach.account;
 public class CheckingAccount extends Account {
 
 	// Fields

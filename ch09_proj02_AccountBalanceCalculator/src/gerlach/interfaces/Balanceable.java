@@ -1,3 +1,4 @@
+package gerlach.interfaces;
 
 public interface Balanceable {
 

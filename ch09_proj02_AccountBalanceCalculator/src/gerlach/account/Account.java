@@ -1,3 +1,7 @@
+package gerlach.account;
+import gerlach.interfaces.Balanceable;
+import gerlach.interfaces.Depositable;
+import gerlach.interfaces.Withdrawable;
 
 public class Account implements Depositable, Withdrawable, Balanceable {
 
