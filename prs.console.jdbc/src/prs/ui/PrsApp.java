@@ -1,7 +1,6 @@
 package prs.ui;
 
 import java.util.List;
-
 import prs.business.LineItem;
 import prs.business.Product;
 import prs.business.Request;
