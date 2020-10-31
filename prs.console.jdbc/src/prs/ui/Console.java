@@ -19,6 +19,13 @@ public class Console {
 		return s;
 	}
 
+	public static boolean getBoolean(String string) {
+		System.out.print(string);
+		boolean s = sc.next() != null; // read the first string on the line
+		sc.nextLine(); // discard the rest of the line
+		return s;
+	}
+
 	public static int getInt(String prompt) {
 		int i = 0;
 		boolean isValid = false;

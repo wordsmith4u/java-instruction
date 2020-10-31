@@ -13,7 +13,7 @@ import prs.business.LineItem;
 
 public class LineItemDb {
 
-	private Connection getConnection() throws SQLException {
+	private static Connection getConnection() throws SQLException {
 		String dbURL = "jdbc:mysql://localhost:3306/bmdb?useSSL=false&allowPublicKeyRetrieval=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String username = "bmdb_user";
 		String password = "sesame";
@@ -108,7 +108,7 @@ public class LineItemDb {
 		}
 	}
 
-	public boolean add(LineItem lineItem) {
+	public static boolean add(LineItem lineItem) {
 		String lineItemInsert = "INSERT INTO lineItem(id, requestId, productId, quantity) VALUES (?, ?, ?, ?)";
 
 		try (Connection con = getConnection(); PreparedStatement ps = con.prepareStatement(lineItemInsert)) {

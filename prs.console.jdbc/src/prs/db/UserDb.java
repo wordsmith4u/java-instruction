@@ -60,6 +60,46 @@ public class UserDb {
 
 	}
 
+	/**
+	 * Authenticates a User
+	 *
+	 * @param userName The user's userName
+	 * @param password The user's password
+	 * @throws SQLException
+	 * @throws Exception
+	 * @returns The matching User or null if no matching User found
+	 */
+	public User authenticateUser(String userName, String password) throws SQLException {
+
+		String selectByUserAndPass = "SELECT * FROM prs.user WHERE UserName = ? AND Password = ?";
+
+		try (Connection con = getConnection(); PreparedStatement ps = con.prepareStatement(selectByUserAndPass);) {
+			ps.setString(1, userName);
+			ps.setString(2, password);
+
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {
+				int id = rs.getInt("ID");
+				String userNameFromDb = rs.getString("UserName");
+				String passwordFromDb = rs.getString("Password");
+				String firstName = rs.getString("FirstName");
+				String lastName = rs.getString("Lastname");
+				String phone = rs.getString("Phone");
+				String email = rs.getString("Email");
+				boolean isReviewer = rs.getBoolean("isReviewer");
+				boolean isAdmin = rs.getBoolean("isAdmin");
+
+				User user = new User(id, userNameFromDb, passwordFromDb, firstName, lastName, phone, email, isReviewer,
+						isAdmin);
+
+				return user;
+			} else {
+				return null;
+			}
+		}
+	}
+
 	public User getUserByID(int id) {
 
 		String userSelect = "SELECT * FROM USER WHERE id = ?";
